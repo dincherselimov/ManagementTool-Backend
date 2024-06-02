@@ -8,6 +8,13 @@ const app: Application = express();
 // Define port
 const PORT = process.env.PORT || 3000;
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:3001', // Frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+}));
 // Middleware
 app.use(express.json());
 
