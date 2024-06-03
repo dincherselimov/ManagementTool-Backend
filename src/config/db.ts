@@ -1,22 +1,29 @@
-import mysql, { Connection, Pool } from 'mysql';
+import mysql, { Pool, Connection } from 'mysql';
 
 const pool: Pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'apinode',
-  connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'apinode',
+    connectionLimit: 10,
 });
 
+let cachedConnection: Connection | null = null;
+
 export const getConnection = (): Promise<Connection> => {
-  return new Promise((resolve, reject) => {
-    pool.getConnection((err, connection) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      console.log('Connected to MySQL database');
-      resolve(connection);
+    return new Promise((resolve, reject) => {
+        if (cachedConnection) {
+            resolve(cachedConnection);
+        } else {
+            pool.getConnection((err, connection) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    console.log('Connected to MySQL database');
+                    cachedConnection = connection;
+                    resolve(connection);
+                }
+            });
+        }
     });
-  });
 };
