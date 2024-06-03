@@ -9,7 +9,6 @@
   "author": "Dincher Selimov",
   "license": "ISC",
   "dependencies": {
-    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/mysql": "^2.15.26",
     "bcrypt": "^5.1.1",
@@ -23,6 +22,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
     "@types/jsonwebtoken": "^9.0.6"
   }
 }
