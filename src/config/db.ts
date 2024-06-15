@@ -1,12 +1,13 @@
 import mysql, { Pool, Connection } from 'mysql';
 
 const pool: Pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'apinode',
+    host: 'sql7.freesqldatabase.com',
+    user: 'sql7714111',
+    password: 'aV8jYV9prD',
+    database: 'sql7714111',
     connectionLimit: 10,
 });
+
 
 let cachedConnection: Connection | null = null;
 
