@@ -8,6 +8,7 @@ const pool: Pool = mysql.createPool({
     connectionLimit: 10,
 });
 
+
 let cachedConnection: Connection | null = null;
 
 export const getConnection = (): Promise<Connection> => {
