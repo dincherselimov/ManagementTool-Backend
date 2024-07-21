@@ -1,10 +1,10 @@
 import mysql, { Pool, Connection } from 'mysql';
 
 const pool: Pool = mysql.createPool({
-    host: 'sql7.freesqldatabase.com',
-    user: 'sql7714111',
-    password: 'aV8jYV9prD',
-    database: 'sql7714111',
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'apinode',
     connectionLimit: 10,
 });
 
