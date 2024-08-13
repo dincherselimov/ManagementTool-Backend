@@ -10,7 +10,7 @@ itemRoutes.post('/login', userLogin);
 itemRoutes.post('/insertData', TimeReportController.insertData);
 itemRoutes.get('/getAllReports', TimeReportController.getAllTimeReports);
 itemRoutes.get('/getUserTimeReports', TimeReportController.getUserTimeReport);
-
+itemRoutes.delete('/deleteUserTimeReport', TimeReportController.deleteUserTimeReport);
 
 export default itemRoutes;
 
